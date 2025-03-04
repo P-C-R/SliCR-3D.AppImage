@@ -38,7 +38,7 @@ jobs:
         git clone --recursive https://github.com/CR-3D/SliCR-3D.git
         cd SliCR-3D
         TAG=$SliCR-3D_2.7.0-rc6
-        git checkout $TAG
+        git checkout SliCR-3D_2.7.0-rc6
         CLEAN_TAG=$(echo $TAG|sed -e 's|version_||g')
         echo "VERSION=$CLEAN_TAG" >> $GITHUB_ENV
 
