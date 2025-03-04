@@ -37,11 +37,7 @@ jobs:
       run: |
         git clone --recursive https://github.com/CR-3D/SliCR-3D.git
         cd SliCR-3D
-        git fetch --tags
-        TAG=${{ github.event.inputs.tag }}
-        if [ -z "$TAG" ]; then
-          TAG=$(git describe --tags `git rev-list --tags --max-count=1`)
-        fi
+        TAG=$SliCR-3D_2.7.0-rc6
         git checkout $TAG
         CLEAN_TAG=$(echo $TAG|sed -e 's|version_||g')
         echo "VERSION=$CLEAN_TAG" >> $GITHUB_ENV
